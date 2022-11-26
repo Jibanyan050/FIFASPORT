@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://i.natgeofe.com/k/271050d8-1821-49b8-bf0b-3a4a72b6384a/obama-portrait__4x3.jpg" alt="Card image cap">
+  <div class="card-body">
+    <select>
+{% for each in dropdown_list %}
+  <option value="{{each}}">{{each}}</option>
+{% endfor %}
+</select>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+{% endblock %}

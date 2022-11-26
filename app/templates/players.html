@@ -1,0 +1,68 @@
+ {% extends "base.html" %}
+
+{% block content %}
+
+
+
+<table id="data" class="table table-striped">
+
+  <thead>
+    <tr>
+      <th>Long Name</th>
+      <th>Age</th>
+      <th>DOB</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Club</th>
+      <th>Nationality</th>
+      <th>Overall</th>
+    </tr>
+
+  </thead>
+  <tbody>
+
+
+  </tbody>
+
+</table>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+
+  $(document).ready(function () {
+
+    $('#data').DataTable({
+
+      ajax: '/api/players',
+
+      pageLength: 25,
+
+      columns: [
+
+        {data: 'long_name'},
+        {data: 'age'},
+        {data: 'dob'},
+        {data: 'height_cm'},
+        {data: 'weight_kg'},
+        {data: 'club'},
+        {data: 'nationality'},
+        {data: 'overall'}
+
+      ],
+
+    });
+
+  });
+
+</script>
+
+{% endblock %}
